@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    
+
     // 1. Initialize AOS
     AOS.init({ once: true, offset: 50, duration: 800 });
 
@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const themeIcon = document.getElementById('theme-icon');
     const htmlElement = document.documentElement;
 
-    /* 
-       Updated Particle Logic:
+    /* 4. Particles.js Initialization based on Theme
        - Dark Mode: White particles (#ffffff)
        - Light Mode: Blue particles (#0d6efd) with Dark lines (#212529) for better contrast
     */
@@ -40,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 "opacity": { "value": 0.5, "random": false }, // Increased opacity for visibility
                 "size": { "value": 4, "random": true }, // Slightly larger dots
-                "line_linked": { 
-                    "enable": true, 
-                    "distance": 150, 
-                    "color": linkColor, 
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": linkColor,
                     "opacity": 0.4, // Darker lines in light mode
-                    "width": 1 
+                    "width": 1
                 },
                 "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
             },
@@ -68,15 +67,15 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleButton.addEventListener('click', () => {
         const currentTheme = htmlElement.getAttribute('data-bs-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-        
+
         htmlElement.setAttribute('data-bs-theme', newTheme);
         localStorage.setItem('theme', newTheme);
-        
+
         updateIcon(newTheme);
-        
+
         // Brief timeout ensures CSS transition finishes before redrawing canvas
         setTimeout(() => {
-            loadParticles(newTheme); 
+            loadParticles(newTheme);
         }, 50);
     });
 
@@ -222,6 +221,22 @@ document.querySelectorAll('input, textarea').forEach(el => {
             label.classList.add('floating');
         } else {
             label.classList.remove('floating');
+        }
+    });
+});
+
+// 9. Auto-Close Mobile Navbar on Click (Links + Theme Toggle)
+const navbarCollapse = document.getElementById('navbarNav');
+const bsCollapse = new bootstrap.Collapse(navbarCollapse, { toggle: false });
+
+// Select nav links AND the theme toggle button
+const navItems = document.querySelectorAll('.nav-link, #theme-toggle');
+
+navItems.forEach((item) => {
+    item.addEventListener('click', () => {
+        // Check if the navbar is actually open (has class 'show')
+        if (navbarCollapse.classList.contains('show')) {
+            bsCollapse.hide();
         }
     });
 });
