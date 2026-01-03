@@ -31,8 +31,10 @@
     <nav class="navbar navbar-expand-lg fixed-top glass-nav">
         <div class="container">
             <a class="navbar-brand fw-bold text-gradient" href="#">Sandeep ARYA<span class="text-dynamic"></span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <i class="bi bi-list fs-1 toggle-icon"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
@@ -53,8 +55,42 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="vh-100 d-flex align-items-center position-relative" id="home">
+    <!-- <section class="vh-100 d-flex align-items-center position-relative" id="home">
+        <div class="nav-spacer"></div>
         <div class="container z-2">
+            <div class="row align-items-center" style="min-height: 80vh;">
+                <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
+                    <div class="glass-badge mb-3 d-inline-block">
+                        <i class="bi bi-geo-alt-fill text-info"></i> Based in New Delhi, India
+                    </div>
+                    <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-gradient">Sandeep Kumar Arya</span>
+                    </h1>
+                    <h2 class="h3 text-dynamic mb-4">I am a <span class="text-info" id="typed-text"></span></h2>
+                    <p class="lead text-dynamic-50 mb-5" style="max-width: 600px;">
+                        Specializing in <strong>ISO 8583</strong> payment protocols, Python automation, and leading
+                        high-performance QA teams.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#projects" class="btn btn-glow btn-lg">View My Work</a>
+                        <a href="./src/files/Sandeep-Arya-Resume_Updated.pdf" target="_blank"
+                            class="btn btn-outline-light btn-lg">Download CV <i class="bi bi-download ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="profile-frame">
+                        <img src="./src/images/profile_img.jpg" alt="Profile" class="img-fluid profile-img">
+                        <div class="tech-icon icon-1"><i class="bi bi-credit-card-2-front"></i></div>
+                        <div class="tech-icon icon-2"><i class="bi bi-code-slash"></i></div>
+                        <div class="tech-icon icon-3"><i class="bi bi-robot"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <section id="home" class="position-relative" style="min-height: 100vh; display: flex; flex-direction: column;">
+        <div style="height: 85px; width: 100%;"></div>
+        <div class="container z-2 flex-grow-1 d-flex flex-column justify-content-center">
             <div class="row align-items-center">
                 <div class="col-lg-7" data-aos="fade-right" data-aos-duration="1000">
                     <div class="glass-badge mb-3 d-inline-block">
@@ -76,7 +112,6 @@
                 <div class="col-lg-5 text-center mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
                     <div class="profile-frame">
                         <img src="./src/images/profile_img.jpg" alt="Profile" class="img-fluid profile-img">
-                        <!-- Floating Tech Icons -->
                         <div class="tech-icon icon-1"><i class="bi bi-credit-card-2-front"></i></div>
                         <div class="tech-icon icon-2"><i class="bi bi-code-slash"></i></div>
                         <div class="tech-icon icon-3"><i class="bi bi-robot"></i></div>
@@ -84,8 +119,9 @@
                 </div>
             </div>
         </div>
+        <div style="height: 50px;"></div>
     </section>
-
+    <!-- End of Hero Section -->
     <!-- Stats Section (Glass Cards) -->
     <section class="container mb-5 mt-n5 position-relative z-2">
         <div class="row g-4 justify-content-center">

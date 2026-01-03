@@ -320,6 +320,79 @@ html {
     }
 }
 
+/* =========================================
+   MOBILE FIXES (Only affects screens < 992px)
+   ========================================= */
+@media (max-width: 991.98px) {
+
+    /* 1. Push content down so it doesn't hide behind the navbar on mobile */
+    #home {
+        padding-top: 10px !important;
+        /* Adjust if needed */
+        height: auto !important;
+        /* Allow section to grow if content is long */
+        min-height: 100vh;
+        /* Ensure it still fills screen */
+    }
+
+    /* 2. Fix the "Based in..." text spacing specifically for mobile */
+    #home .glass-badge {
+        margin-top: 1rem;
+    }
+
+    /* 3. Ensure Navbar toggle is visible on mobile */
+    .navbar-toggler {
+        border: 2px solid rgba(255, 255, 255, 0.5);
+        /* Default: Semi-transparent White Border */
+        border-radius: 8px;
+        /* Rounded corners */
+        padding: 4px 8px;
+        /* Space inside the border */
+        transition: all 0.3s ease;
+    }
+
+    /* Hover Effect (Optional: makes it glow slightly) */
+    .navbar-toggler:hover {
+        border-color: #ffffff;
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Light Mode Override */
+    [data-bs-theme="light"] .navbar-toggler {
+        border-color: rgba(33, 37, 41, 0.5);
+        /* Light Mode: Semi-transparent Dark Border */
+    }
+
+    [data-bs-theme="light"] .navbar-toggler:hover {
+        border-color: #212529;
+        background-color: rgba(0, 0, 0, 0.05);
+    }
+
+    /* Force white icon on dark mobile nav */
+    /* .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 1%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    } */
+}
+
+/* =========================================
+   SIMPLE ICON-BASED HAMBURGER
+   ========================================= */
+
+/* Default (Dark Mode) */
+.toggle-icon {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Light Mode Override */
+[data-bs-theme="light"] .toggle-icon {
+    color: #212529;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}
+
 /* Skill Card Specifics */
 .skill-card {
     border: 1px solid rgba(255, 255, 255, 0.05);
