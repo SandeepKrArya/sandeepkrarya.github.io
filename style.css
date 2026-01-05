@@ -926,3 +926,192 @@ body {
         /* Slightly smaller on mobile */
     }
 }
+
+/* --- 4. CONTACT FORM ALIGNMENT FIX (ALL DEVICES) --- */
+#contact .form-floating {
+    position: relative !important;
+}
+
+#contact .form-floating>.form-control,
+#contact .form-floating>.form-select {
+    height: 60px !important;
+    padding: 1.5rem 0.75rem 0.5rem 0.75rem !important;
+    line-height: 1.25 !important;
+}
+
+#contact .form-floating>textarea.form-control {
+    padding-top: 1.5rem !important;
+    height: 150px !important;
+}
+
+#contact .form-floating>label {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    padding: 1rem 0.75rem !important;
+    pointer-events: none !important;
+    transform-origin: 0 0 !important;
+    transition: opacity .1s ease-in-out, transform .1s ease-in-out !important;
+    color: var(--text-muted) !important;
+    background-color: transparent !important;
+    /* Default transparent */
+}
+
+/* Focused / Filled State */
+#contact .form-floating>.form-control:focus~label,
+#contact .form-floating>.form-control:not(:placeholder-shown)~label,
+#contact .form-floating>textarea.form-control:focus~label,
+#contact .form-floating>textarea.form-control:not(:placeholder-shown)~label {
+    transform: scale(0.85) translateY(-0.6rem) translateX(0.5rem) !important;
+    opacity: 1 !important;
+    color: var(--primary-color) !important;
+    background-color: var(--bg-body) !important;
+    /* Solid background to hide border */
+    width: auto !important;
+    height: auto !important;
+    padding: 0 0.4rem !important;
+    border-radius: 4px !important;
+    z-index: 5 !important;
+}
+
+/* Light Mode Override for Label Background */
+[data-bs-theme="light"] #contact .form-floating>.form-control:focus~label,
+[data-bs-theme="light"] #contact .form-floating>.form-control:not(:placeholder-shown)~label {
+    background-color: #f8f9fa !important;
+}
+
+/* =========================================
+   NAVBAR SOCIAL ICONS
+   ========================================= */
+.social-icon-nav {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    text-decoration: none;
+}
+
+.social-icon-nav:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary-color);
+}
+
+.social-icon-nav:hover .bi-linkedin {
+    color: #0077b5;
+}
+
+.social-icon-nav:hover .bi-envelope-fill {
+    color: #ea4335;
+}
+
+@media (max-width: 991.98px) {
+    .social-icon-nav {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+}
+
+/* =========================================
+   DESKTOP RIGHT SIDEBAR SOCIALS
+   ========================================= */
+.desktop-social-sidebar {
+    position: fixed !important;
+    right: 30px;
+    top: 50% !important;
+    transform: translateY(-50%);
+    z-index: 999;
+}
+
+/* Vertical Text */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    font-weight: 500;
+    opacity: 0.7;
+    white-space: nowrap;
+}
+
+/* Vertical Line Connector */
+.vertical-line {
+    width: 1px;
+    height: 40px;
+    background-color: var(--glass-border);
+}
+
+/* Sidebar Icons */
+.social-icon-sidebar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    /* Theme Adaptive Background & Border */
+    background: var(--nav-bg);
+    border: 1px solid var(--glass-border);
+    color: var(--text-main);
+
+    /* Smooth Transitions */
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-size: 1.25rem;
+    text-decoration: none;
+
+    /* Glass Effect */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px var(--shadow-color);
+}
+
+.social-icon-sidebar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 15px var(--shadow-color);
+    border-color: var(--primary-color);
+    color: var(--primary-color) !important;
+}
+
+.social-icon-sidebar:hover .bi-linkedin {
+    color: #0077b5;
+}
+
+.social-icon-sidebar:hover .bi-envelope-fill {
+    color: #ea4335;
+}
+
+/* =========================================
+   FORCE THEME ICON VISIBILITY (HARD FIX)
+   ========================================= */
+
+/* DEFAULT: Mobile View (< 992px) */
+/* Show Mobile Button */
+#theme-toggle-mobile {
+    display: flex !important;
+}
+
+/* Hide Desktop Button */
+#theme-toggle {
+    display: none !important;
+}
+
+/* DESKTOP VIEW (>= 992px) */
+@media (min-width: 992px) {
+
+    /* Hide Mobile Button */
+    #theme-toggle-mobile {
+        display: none !important;
+    }
+
+    /* Show Desktop Button */
+    #theme-toggle {
+        display: inline-flex !important;
+    }
+}

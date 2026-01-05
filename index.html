@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QA Lead Portfolio | ISO & Automation Expert</title>
+    <title>Sandeep Arya | Portfolio</title>
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -28,10 +28,29 @@
     <nav class="navbar navbar-expand-lg fixed-top glass-nav">
         <div class="container">
             <!-- <a class="navbar-brand fw-bold text-gradient" href="#">Sandeep ARYA<span class="text-dynamic"></span></a> -->
-            
+
             <a class="navbar-brand p-0" href="#">
                 <img src="./src/icons/my-sign.png" alt="Sandeep ARYA" class="navbar-logo">
             </a>
+
+
+
+            <!-- Mobile Social Icons (Visible only on mobile, right aligned) -->
+            <div class="d-flex align-items-center d-lg-none ms-auto me-3">
+                <a href="https://www.linkedin.com/in/sandeep-kumar-arya/" target="_blank" class="social-icon-nav me-2"
+                    title="LinkedIn">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a href="mailto:skarya31@gmail.com" class="social-icon-nav" title="Send Email">
+                    <i class="bi bi-envelope-fill"></i>
+                </a>
+            </div>
+
+            <!-- Mobile Theme Toggle -->
+            <button class="btn btn-glass-icon rounded-circle d-lg-none me-2" id="theme-toggle-mobile"
+                style="width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;">
+                <i class="bi bi-moon-fill" id="theme-icon-mobile"></i>
+            </button>
 
             <button class="navbar-toggler border-0 p-2" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -46,7 +65,7 @@
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link btn btn-glow text-white ms-lg-3 px-4" href="#contact">Hire
                             Me</a></li>
-                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                    <li class="d-none d-lg-block nav-item ms-lg-3 mt-2 mt-lg-0">
                         <button class="btn btn-glass-icon rounded-circle" id="theme-toggle">
                             <i class="bi bi-moon-fill" id="theme-icon"></i>
                         </button>
@@ -577,7 +596,11 @@
                                         Message</button>
                                     <p class="text-info small mt-3 mb-0 send-message d-none">
                                         <span class="icon-spin me-1"><i class="bi bi-gear-wide-connected"></i></span>
-                                        This facility will be available soon 🚧
+                                        This facility is under maintenance, will be available soon 🚧
+                                        <br>
+                                        <span class="me-2 text-muted">Meanwhile, you can reach me via: <i
+                                                class="bi bi-linkedin social-icon-nav"></i> or <i
+                                                class="bi bi-envelope-at social-icon-nav"></i></span>
                                     </p>
                                 </div>
                             </div>
@@ -587,6 +610,17 @@
             </div>
         </div>
     </section>
+
+    <!-- Right Side Vertical Social Icons (Desktop Only) -->
+    <div class="desktop-social-sidebar d-none d-lg-flex flex-column align-items-center gap-3">
+        <a href="https://www.linkedin.com/in/sandeep-kumar-arya/" target="_blank" class="social-icon-sidebar"
+            title="LinkedIn">
+            <i class="bi bi-linkedin"></i>
+        </a>
+        <a href="mailto:skarya31@gmail.com" class="social-icon-sidebar" title="Send Email">
+            <i class="bi bi-envelope-at-fill"></i>
+        </a>
+    </div>
 
     <!-- Footer -->
     <footer class="text-center py-4 text-secondary">

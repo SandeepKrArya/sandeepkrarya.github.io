@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 2. Initialize Typed.js
     new Typed('#typed-text', {
-        strings: ['Quality Engineering Lead.', 'Payment Specialist.', 'Automation Engineer.', 'Tech Enthusiast.'],
+        strings: ['Quality Engineering Lead.', 'Payment Specialist.', 'Automation Engineer.'],
         typeSpeed: 50, backSpeed: 30, loop: true, backDelay: 2000
     });
 
@@ -241,3 +241,41 @@ navItems.forEach((item) => {
     });
 });
 
+
+// ==========================================
+// MOBILE THEME TOGGLE SYNC
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+    const mobileBtn = document.getElementById('theme-toggle-mobile');
+    const mobileIcon = document.getElementById('theme-icon-mobile');
+    const mainBtn = document.getElementById('theme-toggle');
+
+    // 1. Initial Sync
+    const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+    if (mobileIcon) {
+        mobileIcon.className = currentTheme === 'light' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    }
+
+    // 2. Helper to update icon
+    const updateMobileIcon = () => {
+        const theme = document.documentElement.getAttribute('data-bs-theme');
+        if (mobileIcon) {
+            mobileIcon.className = theme === 'light' ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+        }
+    };
+
+    // 3. Mobile Click -> Trigger Main Click
+    if (mobileBtn && mainBtn) {
+        mobileBtn.addEventListener('click', () => {
+            mainBtn.click(); // Trigger existing logic
+            setTimeout(updateMobileIcon, 50); // Sync icon after transition
+        });
+    }
+
+    // 4. Main Click -> Sync Mobile Icon
+    if (mainBtn) {
+        mainBtn.addEventListener('click', () => {
+            setTimeout(updateMobileIcon, 50);
+        });
+    }
+});
